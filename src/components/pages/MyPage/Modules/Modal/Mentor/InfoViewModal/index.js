@@ -1,5 +1,4 @@
 import * as IM from './index.styles';
-import axios from 'axios';
 import MYPAGEOPTION from 'constants/mypage';
 
 // 멘토 - 멘토링 신청서 보기 모달
