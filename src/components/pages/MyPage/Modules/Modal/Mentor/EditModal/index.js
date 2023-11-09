@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import * as EM from './index.styles';
 import Textarea from 'components/@common/Textarea';
 import useApi from 'hooks/useApi';

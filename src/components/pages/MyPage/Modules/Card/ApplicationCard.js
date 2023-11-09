@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as CCS from './ApplicationCard.styles';
 
 import InfoViewModal from 'components/pages/MyPage/Modules/Modal/Mentor/InfoViewModal';

@@ -1,4 +1,3 @@
-import { Navigate } from 'react-router-dom';
 import SideMenu from 'components/pages/MyPage/SideMenu';
 import * as M from './index.styles';
 import useFooter from 'hooks/useFooter';
@@ -44,7 +43,7 @@ function MyPageLayout() {
 
 	return (
 		<>
-			{!user && <Navigate to="/" replace={true} />}
+			{/* {!user && <Navigate to="/" replace={true} />} */}
 			<M.Wrapper>
 				<SideMenu
 					user={{ role, nickName }}
