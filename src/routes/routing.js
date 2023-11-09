@@ -1,74 +1,42 @@
+import SignInAccess from 'pages/SignInAccess';
 import React, { lazy } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import UserMentorApply from '../pages/UserMentoApply/UserMentorApply';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 
-const Layout = lazy(() => import('../components/@common/Layout'));
+const Layout = lazy(() => import('components/@common/Layout'));
 
-// home and signup page
-const Home = lazy(() => import('../pages/Home/Home'));
-const SignUp = lazy(() => import('../pages/SignUp/SignUp'));
-const SignUpDone = lazy(() => import('../pages/SignUp/SignUpDone/SignUpDone'));
+// home & signup
+const Home = lazy(() => import('pages/Home'));
+const SignUp = lazy(() => import('pages/SignUp'));
+const SignUpDone = lazy(() => import('pages/SignUp/SignUpDone'));
 
-// my page
-const MyPage = lazy(() => import('../pages/MyPage/MyPage'));
-const PostListPage = lazy(() =>
-	import('../components/pages/MyPage/RightContent/Mentor/PostList/PostList'),
-);
-const AccountManagePage = lazy(() =>
-	import('../pages/MyPage/AccountManagePage/AccountManagePage'),
-);
-const AccountWithdrawalPage = lazy(() =>
-	import('../pages/MyPage/AccountWithdrawalPage/AccountWithdrawalPage'),
-);
-const MyPageLayout = lazy(() =>
-	import('../components/pages/MyPage/MyPageLayout/MyPageLayout'),
-);
-const MentoringListPage = lazy(() =>
-	import('../pages/MyPage/Mentor/MentoringList/MentoringListPage'),
-);
-const MentoringPostListPage = lazy(() =>
-	import(
-		'../pages/MyPage/Mentor/MentoringPostListPage/MentoringPostListPage'
-	),
-);
+// my
+const MyPageLayout = lazy(() => import('pages/MyPageLayout'));
 
-// portfolio page
-const Portfolio = lazy(() => import('../pages/Portfolio/Portfolio'));
-const PortfolioApply = lazy(() =>
-	import('../pages/Portfolio/PortfolioApply/PortfolioApply'),
-);
-const PortfolioPost = lazy(() =>
-	import('../pages/Portfolio/PortfolioPost/PortfolioPost'),
-);
+// portfolio
+const Portfolio = lazy(() => import('pages/Portfolio'));
+const PortfolioApply = lazy(() => import('pages/Portfolio/PortfolioApply'));
+const PortfolioPost = lazy(() => import('pages/Portfolio/PortfolioPost'));
 
-// study page
-const StudyPage = lazy(() => import('../pages/StudyPage/StudyPage'));
-const StudyEditPost = lazy(() =>
-	import('../pages/StudyPage/StudyEditPost/StudyEditPost'),
-);
-const StudyPostDetail = lazy(() =>
-	import('../pages/StudyPage/StudyPostDetail/StudyPostDetail'),
-);
+// study
+const StudyPage = lazy(() => import('pages/StudyPage'));
+const StudyEditPost = lazy(() => import('pages/StudyPage/StudyEditPost'));
+const StudyPostDetail = lazy(() => import('pages/StudyPage/StudyPostDetail'));
+
+// user mentor apply page
+const UserMentorApply = lazy(() => import('pages/UserMentoApply'));
 
 // admin
-const AdminCategory = lazy(() =>
-	import('../pages/Admin/Category/AdminCategory'),
-);
-const AdminHome = lazy(() => import('../pages/Admin/Home/Admin'));
-const AdminLayout = lazy(() => import('../components/pages/Admin'));
+const AdminCategory = lazy(() => import('pages/Admin/Category/AdminCategory'));
+const AdminHome = lazy(() => import('pages/Admin/Home/Admin'));
+const AdminLayout = lazy(() => import('components/pages/Admin'));
 const AdminMentorApply = lazy(() =>
-	import('../pages/Admin/MentorApply/AdminMentorApply'),
+	import('pages/Admin/MentorApply/AdminMentorApply'),
 );
 const AdminStudyProject = lazy(() =>
-	import('../pages/Admin/StudyProject/AdminStudyProject'),
+	import('pages/Admin/StudyProject/AdminStudyProject'),
 );
 const AdminMentorBoardList = lazy(() =>
-	import('../pages/Admin/MentorBoardList/AdminMentorBoardList'),
-);
-
-// error page
-const ErrorFallback = lazy(() =>
-	import('../components/@common/Error/ErrorFallback'),
+	import('pages/Admin/MentorBoardList/AdminMentorBoardList'),
 );
 
 const router = createBrowserRouter([
@@ -85,42 +53,21 @@ const router = createBrowserRouter([
 				element: <SignUp />,
 			},
 			{
-				path: '/signupdone',
+				path: '/signup/done',
 				element: <SignUpDone />,
+			},
+			{
+				path: '/signinaccess',
+				element: <SignInAccess />,
 			},
 			{
 				path: '/usermentorapply',
 				element: <UserMentorApply />,
 			},
+			// 마이페이지
 			{
 				path: 'mypage',
 				element: <MyPageLayout />,
-				children: [
-					{
-						path: '',
-						element: <MyPage />,
-					},
-					{
-						path: 'mentoringlist',
-						element: <MentoringListPage />,
-					},
-					{
-						path: 'mentoringpostlist',
-						element: <MentoringPostListPage />,
-					},
-					{
-						path: 'postlist',
-						element: <PostListPage />,
-					},
-					{
-						path: 'accountmanage',
-						element: <AccountManagePage />,
-					},
-					{
-						path: 'accountwithdrawal',
-						element: <AccountWithdrawalPage />,
-					},
-				],
 			},
 			{
 				path: 'portfolio',
@@ -167,7 +114,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '',
-				element: <ErrorFallback />,
+				element: <Navigate to="/admin/user" />,
 			},
 			{
 				path: 'user',
@@ -194,30 +141,3 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-
-// import Layout from '../components/@common/Layout';
-
-// import Home from '../pages/Home/Home';
-// import SignUp from '../pages/SignUp/SignUp';
-
-// import MyPage from '../pages/MyPage/MyPage';
-// import MentoringHistory from '../pages/MyPage/Mentor/MentoringHistory/MentoringHistory';
-// import AccountManage from '../pages/MyPage/AccountManage/AccountManage';
-// import AccountWithdrawal from '../pages/MyPage/AccountWithdrawal/AccountWithdrawal';
-// import MyPageLayout from '../components/pages/MyPage/MyPageLayout/MyPageLayout';
-// import MentoringListPage from '../pages/MyPage/Mentor/MentoringList/MentoringListPage';
-
-// import Portfolio from '../pages/Portfolio/Portfolio';
-// import PortfolioApply from '../pages/Portfolio/PortfolioApply/PortfolioApply';
-// import PortfolioPost from '../pages/Portfolio/PortfolioPost/PortfolioPost';
-
-// import StudyPage from '../pages/StudyPage/StudyPage';
-// import StudyEditPost from '../pages/StudyPage/StudyEditPost/StudyEditPost';
-// import StudyPostDetail from '../pages/StudyPage/StudyPostDetail/StudyPostDetail';
-
-// import AdminCategory from '../pages/Admin/Category/AdminCategory';
-// import AdminHome from '../pages/Admin/Home/Admin';
-// import AdminLayout from '../components/pages/Admin';
-// import AdminMentorApply from '../pages/Admin/MentorApply/AdminMentorApply';
-// import AdminStudyProject from '../pages/Admin/StudyProject/AdminStudyProject';
-// import AdminMentorBoardList from '../pages/Admin/MentorBoardList/AdminMentorBoardList';

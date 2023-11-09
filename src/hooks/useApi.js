@@ -1,9 +1,13 @@
 import { useState, useCallback, useEffect } from 'react';
-import { deleteApi, getApi, patchApi, postApi, putApi } from '../utils/api';
+import { deleteApi, getApi, patchApi, postApi, putApi } from 'utils/api';
+import { useErrorBoundary } from 'react-error-boundary';
+import { isAxiosError } from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * TODO React swr로 리팩토링
  */
+
 const mapMethodToFetcher = {
 	get: (...args) => getApi(...args),
 	post: (...args) => postApi(...args),
@@ -13,90 +17,102 @@ const mapMethodToFetcher = {
 };
 
 const useApi = ({
-	path: initPath = '', // API 경로를 설정
-	method: initMethod = 'get', // GET 메서드(기본값)
-	data: initData = {}, // 초기 데이터 (선택사항)
+	// path: initPath = '', // API 경로를 설정
+	// method: initMethod = 'get', // GET 메서드(기본값)
+	// data: initData = {}, // 초기 데이터 (선택사항)
+	// shouldFetch = false, // 컴포넌트 마운트 시 자동으로 요청
+	// // params: initParams = {},
+	// showBoundary = true, // 비동기 에러 표시 여부
+	path = '', // API 경로를 설정
+	method = 'get', // GET 메서드(기본값)
+	data = {}, // 초기 데이터 (선택사항)
 	shouldFetch = false, // 컴포넌트 마운트 시 자동으로 요청
-	params: initParams = {},
+	// params: initParams = {},
+	showBoundary = true, // 비동기 에러 표시 여부
 }) => {
+	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [result, setResult] = useState({});
 	const [_, occurredError] = useState({});
+	const { showBoundary: handleError } = useErrorBoundary();
 
-	const initFetch = useCallback(async () => {
-		try {
-			setIsLoading(true);
-			const queryParams = new URLSearchParams(initParams).toString();
-			const urlWithParams = queryParams
-				? `${initPath}?${queryParams}`
-				: initPath;
-			const fetchResult = await mapMethodToFetcher[initMethod](
-				urlWithParams,
-				initData,
-			);
-			setResult(fetchResult);
-		} catch (err) {
-			// 비동기 에러 검출 가능
-			// occurredError(() => {
-			// 	throw new Error(err);
-			// });
-
-			// setError(err);
-		}
-		setIsLoading(false);
-	}, [initMethod, initData, initPath]);
+	// const initFetch = useCallback(async () => {
+	// try {
+	// setIsLoading(true);
+	// const fetchResult = await mapMethodToFetcher[initMethod](
+	// initPath,
+	// initData,
+	// );
+	// setResult(fetchResult);
+	// } catch (err) {
+	// if (showBoundary) {
+	// setError(err);
+	// throw err;
+	// } else {
+	// // 비동기 에러 검출 가능
+	// occurredError(() => {
+	// throw new Error(err);
+	// });
+	// }
+	// }
+	// setIsLoading(false);
+	// }, [initMethod, initData, initPath]);
 
 	const trigger = useCallback(
 		async ({
-			path: triggerPath = initPath,
-			method: triggerMethod = initMethod,
-			data: triggerData = initData,
-			params: triggerParams = {},
+			path: triggerPath = path,
+			method: triggerMethod = method,
+			data: triggerData = data,
 			applyResult = false,
+			showBoundary = true,
 		}) => {
+			// console.log({ triggerPath, triggerMethod, triggerData });
 			try {
 				setIsLoading(true);
-				// const fetchResult = await mapMethodToFetcher[initMethod](
-				// 	`${initPath}${queryParams ? `?${queryParams}` : initPath}`,
-				// 	initData,
-				// );
+				// throw new Error('this is custom error');
 				const triggerResult = await mapMethodToFetcher[triggerMethod](
 					triggerPath,
 					triggerData,
 				);
 				if (applyResult) {
-					const queryParams = new URLSearchParams(
-						triggerParams,
-					).toString();
-					// query가 있을 때 query로 호출, 없을때는 initPath로 호출
-					const urlWithParams = queryParams
-						? `${triggerPath}?${queryParams}`
-						: initPath;
-					// console.log(urlWithParams);
-					const triggerResult = await mapMethodToFetcher[initMethod](
-						urlWithParams,
-						initData,
-					);
-					console.log(triggerResult);
 					setResult(triggerResult);
 				} else {
-					setResult(triggerResult);
+					return triggerResult;
 				}
 			} catch (err) {
 				// 비동기 에러 검출 가능
-				// occurredError(() => {
-				// 	throw new Error(err);
-				// });
-				// setError(err);
+				if (showBoundary) {
+					if (isAxiosError(err)) {
+						const {
+							request: { status },
+						} = err;
+						if (status === 401) {
+							localStorage.removeItem('recoil-persist');
+							return navigate(0);
+						}
+					}
+					handleError(err);
+				} else {
+					// 비동기 에러 검출 가능
+					setError(err);
+				}
 			}
 			setIsLoading(false);
 		},
-		[initMethod, initData, initPath, initParams],
+		// [initMethod, initData, initPath],
+		[path, method, data],
 	);
 
 	useEffect(() => {
-		shouldFetch && initFetch();
+		shouldFetch &&
+			trigger({
+				path,
+				method,
+				data,
+				applyResult: true,
+				showBoundary: true,
+			});
 	}, []);
 
 	return {

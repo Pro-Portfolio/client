@@ -1,4 +1,4 @@
-import MESSAGE from '../constants/message';
+import MESSAGE from 'constants/message';
 
 export const check = ex => {
 	return [
@@ -7,11 +7,11 @@ export const check = ex => {
 			message: MESSAGE.CHECK.POSITION,
 		},
 		{
-			checked: ex.company.length === 0,
+			checked: !ex.company || ex.company.length === 0,
 			message: MESSAGE.CHECK.COMPANY,
 		},
 		{
-			checked: ex.career.length === 0,
+			checked: !ex.company || ex.career.length === 0,
 			message: MESSAGE.CHECK.CAREER,
 		},
 		{
@@ -29,6 +29,36 @@ export const check = ex => {
 		{
 			checked: ex.description && ex.description.length > 1000,
 			message: MESSAGE.CHECK.DESCRIPTIONLENGTH,
+		},
+	];
+};
+
+export const checkModal = modal => {
+	return [
+		{
+			checked: !modal.title || modal.title.length === 0,
+			message: MESSAGE.CHECK.TITLE,
+		},
+		{
+			checked: modal.title && modal.title.length > 50,
+			message: MESSAGE.CHECK.TITLELENGTH,
+		},
+		{
+			checked: !modal.content || modal.content.length === 0,
+			message: MESSAGE.CHECK.DESCRIPTION,
+		},
+		{
+			checked: modal.content && modal.content.length > 1000,
+			message: MESSAGE.CHECK.DESCRIPTIONLENGTH,
+		},
+		{
+			checked: !modal.email && modal.email.length === 0,
+			message: MESSAGE.CHECK.EMAIL,
+		},
+		{
+			checked:
+				!modal.portfolioAddress && modal.portfolioAddress.length === 0,
+			message: MESSAGE.CHECK.PORTFOLIO,
 		},
 	];
 };

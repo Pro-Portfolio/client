@@ -1,23 +1,29 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Button, Input, Space, theme } from 'antd';
+import { useEffect, useMemo, useState } from 'react';
+import { Pagination, Space, theme } from 'antd';
 
-import AdminTable from '../../../components/pages/Admin/Table/AdminTable';
-import { AdminContent } from '../../../components/pages/Admin/Common/Common.styles';
-import { SearchInput } from '../../../components/pages/Admin/Searchbar/Searchbar.styles';
+import AdminTable from 'components/pages/Admin/Table';
+import { AdminContent } from 'components/pages/Admin/Common/Common.styles';
+import { SearchInput } from 'components/pages/Admin/Searchbar/index.styles';
 import { CancelButton, SaveButton, TableInput } from './AdminCategory.styles';
 import { HandlerButton } from '../MentorApply/AdminMentorApply.styles';
-import useApi from '../../../hooks/useApi';
-import MESSAGE from '../../../constants/message';
+import { PaginationWrap } from '../Home/Admin.styles';
+import { useNavigate } from 'react-router-dom';
+import MESSAGE from 'constants/message';
+import useApi from 'hooks/useApi';
+import LoadingBar from 'components/@common/Loading';
 const AdminCategory = () => {
+	const navigate = useNavigate();
 	// 수정 중인 행의 key를 저장
 	const [editingKey, setEditingKey] = useState(null);
 	const [tableData, setTableData] = useState();
 	const [tempData, setTempData] = useState({});
 	const [inputValue, setInputValue] = useState('');
 	const [categoryInput, setCategoryInput] = useState('');
+	const [totalPages, setTotalPages] = useState(1);
+	const [currentPage, setCurrentPage] = useState(1);
 
 	const { result, trigger, isLoading, error } = useApi({
-		path: '/position',
+		path: '/positions',
 		shouldFetch: true,
 	});
 
@@ -86,37 +92,29 @@ const AdminCategory = () => {
 	];
 
 	useEffect(() => {
-		console.log(result);
-		if (result && result.length > 0) {
+		if (result.positions) {
 			setTableData(
-				result.map(item => ({
+				result.positions.map(item => ({
 					...item,
 					key: item._id,
 					name: item.name,
 				})),
 			);
 		}
+		setTotalPages(result.total);
 	}, [result]);
 
-	const memoColumns = useMemo(() => [], [tempData, editingKey]);
+	const memoColumns = useMemo(() => [...columns], [tempData, editingKey]);
 	const memoResult = useMemo(
-		() => (
-			<AdminTable
-				columns={columns}
-				dataSource={tableData}
-				totalPages={0}
-			/>
-		),
+		() => <AdminTable columns={columns} dataSource={tableData} />,
 		[tableData, memoColumns],
 	);
 
 	// Input onChange Handler
 	const handleInputChange = (e, key) => {
 		// 새로운 배열에 값 저장
-		console.log(key);
 		setCategoryInput(e.target.value);
 		setTempData({ ...tempData, [key]: e.target.value });
-		console.log(tempData);
 	};
 	// Button Save Handler
 	const handleSave = async key => {
@@ -124,21 +122,31 @@ const AdminCategory = () => {
 			alert(MESSAGE.CHECK.MODAL);
 			return;
 		}
-		console.log(key);
+
+		const categoryVerify = await trigger({
+			path: 'positions/validate-position',
+			showBoundary: false,
+			method: 'post',
+			data: { position: categoryInput },
+		});
+		if (!categoryVerify) {
+			alert('중복된 카테고리 입니다.');
+			return;
+		}
 		await trigger({
-			path: `/position/${key}`,
+			path: `/positions/${key}`,
 			data: { name: categoryInput },
 			method: 'put',
+			showBoundary: false,
+			applyResult: true,
+		});
+		await trigger({
+			data: {
+				skip: currentPage * 10 - 10,
+			},
 			applyResult: true,
 		});
 		setEditingKey(null);
-
-		// const updatedData = tableData.map(item =>
-		// 	item.key === key ? { ...item, name: tempData[key] } : item,
-		// );
-		// console.log(updatedData);
-		// setTableData(updatedData);
-		// Todo 카테고리 수정 API
 	};
 	// 수정 버튼을 눌렀을 때 Edit 상태 업데이트
 	const handleEdit = key => {
@@ -157,29 +165,77 @@ const AdminCategory = () => {
 	const removeHandler = async key => {
 		await trigger({
 			method: 'delete',
-			path: `/position/${key}`,
+			path: `/positions/${key}`,
 			applyResult: true,
 		});
-		// setTableData(data => data.filter(item => item.key !== key));
-
-		// setTableData(data => data.filter(items => items.key !== key));
+		if (result.positions.length === 1) {
+			await trigger({
+				data: {
+					skip: (currentPage - 1) * 10 - 10,
+				},
+				applyResult: true,
+			});
+			setCurrentPage(prev => prev - 1);
+		} else {
+			await trigger({
+				data: {
+					skip: currentPage * 10 - 10,
+				},
+				applyResult: true,
+			});
+		}
 	};
 	// 카테고리 추가
 	const addCategoryHandler = async () => {
-		console.log(inputValue);
-		await trigger({
-			method: 'post',
-			data: { name: inputValue },
-			applyResult: true,
-		});
-		setInputValue('');
-		console.log(result);
+		try {
+			if (!inputValue.trim()) {
+				alert('추가 할 카테고리를 입력해주세요.');
+				return;
+			}
+			const categoryVerify = await trigger({
+				path: 'positions/validate-position',
+				showBoundary: false,
+				method: 'post',
+				data: { position: inputValue },
+			});
+			if (!categoryVerify) {
+				alert('중복된 카테고리 입니다.');
+				return;
+			}
+
+			await trigger({
+				method: 'post',
+				data: { name: inputValue },
+				showBoundary: false,
+				applyResult: true,
+			});
+			await trigger({
+				data: {
+					skip: currentPage * 10 - 10,
+				},
+				applyResult: true,
+			});
+			setInputValue('');
+		} catch (err) {
+			console.log(err);
+		}
 	};
 	// console.log(tableData);
 
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
+
+	const pageChange = async pageNumber => {
+		await trigger({
+			path: '/positions',
+			data: {
+				skip: pageNumber * 10 - 10,
+			},
+			applyResult: true,
+		});
+		setCurrentPage(pageNumber);
+	};
 
 	return (
 		<AdminContent background={colorBgContainer}>
@@ -190,21 +246,23 @@ const AdminCategory = () => {
 				onChange={e => setInputValue(e.target.value)}
 				value={inputValue}
 			/>
-			{isLoading ? <h2>로딩중</h2> : memoResult}
-			{/* <Searchbar
-				type={'ADD'}
-				// value={set}
-				placeholder="추가 할 카테고리를 입력하세요."
-			/>  */}
-			{/* {isLoading ? (
-				<h2>로딩중</h2>
+			{isLoading ? (
+				<LoadingBar />
 			) : (
-				<AdminTable
-					columns={columns}
-					dataSource={tableData}
-					totalPages={0}
-				/>
-			)} */}
+				<>
+					{memoResult}
+					<PaginationWrap>
+						<Pagination
+							current={currentPage}
+							defaultCurrent={currentPage}
+							total={totalPages}
+							onChange={e => {
+								pageChange(e);
+							}}
+						/>
+					</PaginationWrap>
+				</>
+			)}
 		</AdminContent>
 	);
 };
