@@ -18,7 +18,9 @@ export const IntroBox = styled.div`
 	gap: 16px;
 
 	& a {
-		width: 100px;
+		text-decoration: none;
+		margin-top: 10px;
+		color: ${({ theme }) => theme.PALETTE.mainColor};
 	}
 
 	& span {
