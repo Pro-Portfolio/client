@@ -107,6 +107,13 @@ export const sitemapRoutes = [
 	},
 	// 관리자 페이지
 	{
+		path: '/adminsignin',
+		disable: true,
+		title: '포폴 : 관리자 로그인',
+		desc: '여기는 관리자 로그인하는 페이지입니다.',
+		keywords: ['admin'],
+	},
+	{
 		path: '/admin',
 		disable: true,
 		title: '포폴 : 관리자',
