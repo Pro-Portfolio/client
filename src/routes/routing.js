@@ -4,10 +4,11 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 const Layout = lazy(() => import('components/@common/Layout'));
 
-// home & signup
+// home & signup &signin
 const Home = lazy(() => import('pages/Home'));
 const SignUp = lazy(() => import('pages/SignUp'));
 const SignUpDone = lazy(() => import('pages/SignUp/SignUpDone'));
+const AdminSignIn = lazy(() => import('pages/SignIn/AdminSignIn'));
 
 // my
 const MyPageLayout = lazy(() => import('pages/MyPageLayout'));
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
 			{
 				path: '',
 				element: <Home />,
+			},
+			{
+				path: '/adminsignin',
+				element: <AdminSignIn />,
 			},
 			{
 				path: '/signup',

@@ -32,7 +32,7 @@ function Footer() {
 							(주) 포폴 | 사업자 등록 번호: 127-16-91112 |
 							서울특별시 성동구 아차산로17길 48 포폴
 						</span>
-						<a href="/">관리자 로그인</a>
+						<Link to="/adminsignin">관리자 로그인</Link>
 					</S.Intro>
 				</S.IntroBox>
 			</S.Container>

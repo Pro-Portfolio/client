@@ -20,6 +20,7 @@ export const IntroBox = styled.div`
 	& a {
 		text-decoration: none;
 		margin-top: 10px;
+		color: ${({ theme }) => theme.PALETTE.mainColor};
 	}
 
 	& span {
