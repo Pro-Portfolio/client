@@ -6,7 +6,7 @@ export const Wrap = styled.div`
 	${flexCenter};
 `;
 
-export const RegisterForm = styled.form`
+export const loginInfo = styled.div`
 	margin: 120px 0 150px;
 	width: 360px;
 	text-align: center;
@@ -34,18 +34,4 @@ export const RegisterForm = styled.form`
 		width: 360px;
 		margin-top: 32px;
 	}
-`;
-
-export const NickNameCheck = styled.div`
-	display: flex;
-	gap: 8px;
-	> button {
-		width: 80px;
-		height: 42px;
-		padding: 0;
-	}
-`;
-export const StyledError = styled.span`
-	color: ${({ theme }) => theme.PALETTE.mainColor};
-	font-size: ${({ theme }) => theme.FONT_SIZE.sm};
 `;
