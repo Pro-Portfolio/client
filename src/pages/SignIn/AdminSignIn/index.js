@@ -26,8 +26,8 @@ function AdminSignIn() {
 	const handleLogin = e => {
 		e.preventDefault();
 		trigger({
-			path: '/auth/signup',
-			method: 'get',
+			path: '/auth/admin/login',
+			method: 'post',
 			data: {
 				email,
 				password,
@@ -41,7 +41,7 @@ function AdminSignIn() {
 			<S.loginInfo>
 				<p>관리자 로그인</p>
 				<div>
-					<label htmlFor="">이메일</label>
+					<label>이메일</label>
 					<Input
 						type="email"
 						value={email}
