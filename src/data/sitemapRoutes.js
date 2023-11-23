@@ -116,7 +116,7 @@ export const sitemapRoutes = [
 	{
 		path: '/admin',
 		disable: true,
-		title: '포폴 : 관리자',
+		title: '포폴 : 관리자 로그인',
 		desc: '여기는 관리자 메인 페이지입니다.',
 		keywords: ['admin'],
 	},
