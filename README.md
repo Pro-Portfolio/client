@@ -175,43 +175,7 @@
 </ul>
 
 </br>
-  </div>
-</details>
-    <details markdown="1">
-  <summary>알림 기능 구현</summary>
-  <div>
-    <ul>
-      <li>Palling방식으로 유저 정보를 setInterval로 주기적으로 호출해서
-      알림이 오면 그 정보를 받아서 화면에
-      표시해주는 기능 구현</li>
-        <li>알림의 종류를 캐치하여 알림을 클릭 할 시 정보에 맞는 화면으로 이동</li>
-    </ul>
-  </div>
-</details>
-    <details markdown="1">
-  <summary>useApi.js 작성</summary>
-  <div>
-    <ul>
-      <li>사용 배경 : Axios를 이용해 HTTP 통신을 하던 와중 매번 반복적으로 API 호출 로직을
-      작성해야 하는 불편한 상황</li>
-        <li>로직을 반복해서 작성하지 않고 재사용 할 수 있는 부분과 API 호출에 따른 데이터
-        로딩상태, 에러 상태와 데이터를 쉽게 관리</li>
-        <li>즉시 호출할 때 쓰이는 initFetch 함수, API가 필요한 상황에만 호출을 하는 trigger 함수
-        로 2개를 나눠서 진행하던 도중 initFetch에서 호출하는 상황을 trigger로 구현 할 수있다고
-        판단되어 현재 trigger로만 API호출</li>
-    </ul>
-  </div>
-</details>
-     <details markdown="1">
-  <summary>Axios의 Interceptors 기능 구현</summary>
-  <div>
-    <ul>
-      <li>Axios로 호출할 때 BaseUrl 설정 서버에서 일정시간 이상 응답이 없을 경우 에러처리</li>
-      <li>요청, 응답전 Interceptors 기능으로 필요한 데이터만을 추출, 에러 처리</li>
-    </ul>
-  </div>
-</details>
-</ul>
+
 
 # 기술스택
 
