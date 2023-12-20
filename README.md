@@ -175,36 +175,6 @@
 </ul>
 
 </br>
-
-# 🙋‍♂️ What did I do?
-
-<ul>
-  <li>구현기능
-    <ul>
-      <li>관리자 페이지 기능 구현</li>
-      <li>Amazon S3 서버로 이미지 업로드 기능 구현</li>
-      <li>알림 기능 구현</li>
-      <li>useApi.js 작성</li>
-      <li>Axios의 Interceptors 기능 구현</li>
-    </ul>
-  </li>
-  <li>구현 상세 설명</li>
-    <details markdown="1">
-  <summary>관리자 페이지 기능 구현</summary>
-  <div>
-    <ul>
-      <li>페이지의 공통 부분인 SideBar, Table, 레이아웃 등 컴포넌트로 관리</li>
-    </ul>
-  </div>
-</details>
-     <details markdown="1">
-  <summary>Amazon S3 서버로 이미지 업로드 기능 구현</summary>
-  <div>
-    <ul>
-      <li>multer를 사용해서 백엔드에서 이미지를 업로드하여 관리하려고 하였으나
-      백엔드의 인적자원이 부족해서 프론트에서 s3 서버로 이미지를 업로드하는
-      기능을 구현했습니다.</li>
-    </ul>
   </div>
 </details>
     <details markdown="1">
