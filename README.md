@@ -1,4 +1,4 @@
-# 프로폴리오 리뷰 사이트 Pro-포폴입니다.
+# 포트폴리오 리뷰 사이트 Pro-포폴입니다.
 
 ![image](https://github.com/tomm777/Pro-Pofol-client/assets/95726595/bdb821ff-159c-49ef-8f8b-d339dee02f6a)
 
@@ -187,3 +187,4 @@
 | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png) | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png) |
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Latest ✔ | Latest ✔ | Latest ✔ |
+](https://www.youtube.com/watch?v=efYJ_Ms-Bkk)https://www.youtube.com/watch?v=efYJ_Ms-Bkk
