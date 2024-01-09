@@ -1,6 +1,6 @@
 # 포트폴리오 리뷰 사이트 Pro-포폴입니다.
 
-![image](https://github.com/tomm777/Pro-Pofol-client/assets/95726595/bdb821ff-159c-49ef-8f8b-d339dee02f6a)
+![image]([https://github.com/tomm777/Pro-Pofol-client/assets/95726595/bdb821ff-159c-49ef-8f8b-d339dee02f6a](https://cdn.discordapp.com/attachments/1194170151113854978/1194170173188476948/2024-01-09_15.45.01.png?ex=65af60a3&is=659ceba3&hm=eb60fc74f20d14dcaef5cdf8cf9515ceded734655f657234a8c8d72b4317c9c9&))
 
 
 # 페르소나
