@@ -131,7 +131,7 @@
 <img src=https://github.com/tomm777/Pro-Pofol-client/assets/95726595/2f1fce50-533c-457f-a7b9-ee09dc696c9c width="600" />
 </div>
 <ul>
-    <li>팀 노션 워크스페이스에서 진행 상황, 진행 예정 등 작업 흐름을 공유</li>
+    <li>팀 노션에서 진행 상황, 진행 예정 등 작업 흐름을 공유</li>
 </ul>
 </br>
 
@@ -141,7 +141,7 @@
 </div>
 
 <ul>
-    <li>피그마에서 기획 및 디자인 작업을 진행</li>
+    <li>피그마에서 기획 및 각 페이지 디자인 작업을 진행</li>
 </ul>
 </br>
 
