@@ -2,7 +2,7 @@
 
 <div align="center">
 <img src="https://cdn.discordapp.com/attachments/1194170151113854978/1194172338783145984/favicon.png?ex=65af62a8&is=659ceda8&hm=ef0db27cee0f0b4bb8df7555bc0b3227a920b6e0de9a1abbf752301dbda418ea&" />
-개발자를 희망하는 취준생들에게는 포트폴리오 리뷰를 받을 수 있는 기회를 제공하고,
+개발자를 희망하는 취준생들에게는 포트폴리오 리뷰를 받을 수 있는 기회를 제공하고,<br />
 현재 개발자이면서 실력 향상 및 주니어 개발자들에게 도움을 주고 싶은 시니어 개발자들을 위해
 만들어진 프로 포트폴리오 리뷰 사이트입니다.
 </div>
