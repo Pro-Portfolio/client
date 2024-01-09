@@ -1,11 +1,11 @@
 # 🔥 프로젝트 소개
 
-<div align="center">
+<p align="center">
 <img src="https://cdn.discordapp.com/attachments/1194170151113854978/1194172338783145984/favicon.png?ex=65af62a8&is=659ceda8&hm=ef0db27cee0f0b4bb8df7555bc0b3227a920b6e0de9a1abbf752301dbda418ea&" width="200" />
-<br /> <strong>&lt;Pro 포폴&gt;</strong>
-<br />개발자를 희망하는 취준생들에게는 포트폴리오 리뷰를 받을 수 있는 기회를 제공하고,<br />
-실력 향상 및 주니어 개발자들에게 도움을 주고 싶은 시니어 개발자들을 위해<br />만들게 된 프로 포트폴리오 리뷰 사이트입니다.<br /><br /><a href=https://pofol.site/ target=_blank>pro포폴 구경하기</a>
-</div>
+<br> <strong>&lt;Pro 포폴&gt;</strong>
+<br>개발자를 희망하는 취준생들에게는 포트폴리오 리뷰를 받을 수 있는 기회를 제공하고,<br>
+실력 향상 및 주니어 개발자들에게 도움을 주고 싶은 시니어 개발자들을 위해<br>만들게 된 프로 포트폴리오 리뷰 사이트입니다.<br /><br /><a href=https://pofol.site/ target=_blank>Pro포폴 구경하기</a>
+</p>
 <br />
 
 # 🖥️ 메인 서비스 화면
@@ -30,7 +30,7 @@
 
 # 🎯 주요 기능 소개
 
-## 🏘️ 홈 화면
+## 🏘️ 메인
 
 <ul>
     <li>네이버 로그인 · 로그아웃</li>
@@ -39,15 +39,17 @@
     <li>(로그인 시) 유저 직무에 맞는 멘토 추천</li>
     <li>멘토 신청 결과, 본인이 작성한 게시글 댓글 등 알림 기능</li>
 </ul>
+<br />
 
-### 👨‍🏫 멘토 전환 신청
+## 👨‍🏫 멘토 전환 신청
 
 <ul>
     <li>일반 유저는 멘토 전환 신청을 통해 멘토가 될 수 있습니다.</li>
     <li>재직 회사, 경력, 인증 할 수 있는 이미지를 업로드 한 뒤, 관리자의 승인 후 멘토 자동 전환</li>
 </ul>
+<br />
 
-### 📝 포트폴리오 리뷰
+## 📝 포트폴리오 리뷰
 
 <ul>
     <li>인기 있는 멘토 목록</li>
@@ -58,8 +60,9 @@
     <li>멘토에게 리뷰 신청시 제목, 내용, 이메일 주소, 포트폴리오 주소 작성 </li>
     <li>포트폴리오 리뷰 후기 목록</li>
 </ul>
+<br />
 
-### 📒 스터디 / 프로젝트
+## 📒 스터디 / 프로젝트
 
 <ul>
     <li>스터디 · 프로젝트 추천 목록</li>
@@ -157,6 +160,7 @@
 </br>
 
 ## 💿 프로젝트 관련 자료 및 주소
+- 웹 사이트 주소 : <a href=https://pofol.site/ target=_blank>https://pofol.site/</a>
 - 백엔드 서버 주소 :
 <a href=https://github.com/tomm777/Pro-Pofol-server target=_blank>https://github.com/Pro-Portfolio/server</a>
 
