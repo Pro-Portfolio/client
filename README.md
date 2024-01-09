@@ -160,11 +160,11 @@
 </br>
 
 ## 💿 프로젝트 관련 자료 및 주소
-- 웹 사이트 주소 : <a href=https://pofol.site/ target=_blank>https://pofol.site/</a>
-- 노션 주소 : https://www.notion.so/Pro-0ef59e78404d4c0bb62087ac720cdbf6?pvs=4
-- 피그마 주소 : https://www.figma.com/file/HNPr0zzVnOXJB09UhLdXzb/Pick-ME?type=design&mode=design
-- 백엔드 서버 주소 : <a href=https://github.com/tomm777/Pro-Pofol-server target=_blank>https://github.com/Pro-Portfolio/server</a>
-- 프로젝트 PPT 자료 : <a href='https://drive.google.com/file/d/1SEc3iQ-Yy6U4iyh6v5Z5cnuCYvnc3HJ9/view?usp=drive_link' target=_blank>https://drive.google.com/file/d/1SEc3iQ-Yy6U4iyh6v5Z5cnuCYvnc3HJ9/view?usp=drive_link</a>
+- 웹 사이트 : https://pofol.site/
+- 노션 : https://www.notion.so/Pro-0ef59e78404d4c0bb62087ac720cdbf6?pvs=4
+- 피그마 : https://www.figma.com/file/HNPr0zzVnOXJB09UhLdXzb/Pick-ME?type=design&mode=design
+- 백엔드 서버 : https://github.com/Pro-Portfolio/server
+- 프로젝트 PPT 자료 : https://drive.google.com/file/d/1SEc3iQ-Yy6U4iyh6v5Z5cnuCYvnc3HJ9/view?usp=drive_link
 
 <br />
 
