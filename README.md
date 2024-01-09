@@ -2,6 +2,7 @@
 
 <div align="center">
 <img src="https://cdn.discordapp.com/attachments/1194170151113854978/1194172338783145984/favicon.png?ex=65af62a8&is=659ceda8&hm=ef0db27cee0f0b4bb8df7555bc0b3227a920b6e0de9a1abbf752301dbda418ea&" />
+<br /> <strong>&lt;Pro 포폴&gt;</strong>
 <br />개발자를 희망하는 취준생들에게는 포트폴리오 리뷰를 받을 수 있는 기회를 제공하고,<br />
 실력 향상 및 주니어 개발자들에게 도움을 주고 싶은 시니어 개발자들을 위해<br />만들게 된 프로 포트폴리오 리뷰 사이트입니다.<br /><br /><a href=https://pofol.site/ target=_blank>pro포폴 구경하기</a>
 </div>
@@ -126,17 +127,18 @@
 # 🫶🏻 협업 방식
 
 ## 1. Notion
-![image](https://github.com/tomm777/Pro-Pofol-client/assets/95726595/2f1fce50-533c-457f-a7b9-ee09dc696c9c)
-
+<div align='center'>
+<img src=https://github.com/tomm777/Pro-Pofol-client/assets/95726595/2f1fce50-533c-457f-a7b9-ee09dc696c9c width="600" />
+</div>
 <ul>
     <li>팀 노션 워크스페이스에서 진행 상황, 진행 예정 등 작업 흐름을 공유</li>
 </ul>
 </br>
 
 ## 2. Figma
-
-![image](https://github.com/tomm777/Pro-Pofol-client/assets/95726595/5f21b781-a2fb-46f7-92bd-a8772481f098)
-
+<div align='center'>
+<img src=https://github.com/tomm777/Pro-Pofol-client/assets/95726595/5f21b781-a2fb-46f7-92bd-a8772481f098 width="800" />
+</div>
 
 <ul>
     <li>피그마에서 기획 및 디자인 작업을 진행</li>
@@ -144,9 +146,9 @@
 </br>
 
 ## 3. Gather Town
-
-![image](https://github.com/tomm777/Pro-Pofol-client/assets/95726595/c956378a-f02a-4ade-b930-46e9ac097436)
-
+<div align='center'>
+<img src=https://github.com/tomm777/Pro-Pofol-client/assets/95726595/c956378a-f02a-4ade-b930-46e9ac097436 width="500" />
+</div>
 
 <ul>
     <li>매일 아침 10시에 게더 타운에서 회의하였으며 이슈가 있을 시 실시간으로 소통하며 협업을 진행</li>
