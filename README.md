@@ -1,7 +1,7 @@
 # 🔥 프로젝트 소개
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/1194170151113854978/1194172338783145984/favicon.png?ex=65af62a8&is=659ceda8&hm=ef0db27cee0f0b4bb8df7555bc0b3227a920b6e0de9a1abbf752301dbda418ea&" width="200" />
+<img src="https://cdn.discordapp.com/attachments/1194170151113854978/1272513006571360296/2024-08-12_20.12.19.png?ex=66bb3f96&is=66b9ee16&hm=f528f94fb7206f1b9e6ff6032d2094de3b6e6550ea4f12782c9de7465e515e57&" width="200" />
 <br> <strong>&lt;Pro 포폴&gt;</strong>
 <br>개발자를 희망하는 취준생들에게는 포트폴리오 리뷰를 받을 수 있는 기회를 제공하고,<br>
 실력 향상 및 주니어 개발자들에게 도움을 주고 싶은 시니어 개발자들을 위해<br>만들게 된 프로 포트폴리오 리뷰 사이트입니다.<br /><br /><a href=https://pofol.site/ target=_blank>Pro포폴 구경하기</a>
@@ -12,7 +12,7 @@
 
 <br />
 
-![image](https://cdn.discordapp.com/attachments/1194170151113854978/1194170173188476948/2024-01-09_15.45.01.png?ex=65af60a3&is=659ceba3&hm=eb60fc74f20d14dcaef5cdf8cf9515ceded734655f657234a8c8d72b4317c9c9&)
+![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272512778518921249/2024-08-12_20.10.55.png?ex=66bb3f60&is=66b9ede0&hm=bdfb5942fcd91f73d185446f879389668b664454ac2943169da597148cc0a703&)
 
 <br />
 
