@@ -12,21 +12,33 @@
 
 <br />
 
+> Pro포폴 메인
+
 ![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272512778518921249/2024-08-12_20.10.55.png?ex=66bb3f60&is=66b9ede0&hm=bdfb5942fcd91f73d185446f879389668b664454ac2943169da597148cc0a703&)
 
-![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272513596571521119/2024-08-12_20.14.38.png?ex=66bb4023&is=66b9eea3&hm=becd89eecf34c073265103c9fb68a9534f78db11e4b747ba0cba04eaa7f4b8f4&)
+> 포트폴리오 리뷰
+
+![image](https://github.com/user-attachments/assets/cf246b72-1856-49f9-b3bf-64ce081c610b)
+
+> 포트폴리오 리뷰 상세
 
 ![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272513759038013481/2024-08-12_20.15.15.png?ex=66bb404a&is=66b9eeca&hm=5d25dee85e5918ca76b349a609431e4066536563bc3c9ea401ce3609d074d22a&)
 
+> 스터디 및 프로젝트 모집
+
 ![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272513824469024839/2024-08-12_20.15.32.png?ex=66bb4059&is=66b9eed9&hm=88fae1abd10f7e3d52628526f0c307215c0a8af86bc61f36773dea314032e2c0&)
 
+> 스터디 및 프로젝트 모집 글 상세
+
 ![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272513993088434277/2024-08-12_20.16.13.png?ex=66bb4082&is=66b9ef02&hm=688447b51f187a7673b71b0ea39ace487342a948cdb0daa47611df9aa39d14dd&)
+
+> 멘토 전환 페이지
 
 ![image](https://cdn.discordapp.com/attachments/1194170151113854978/1272514890942124093/2024-08-12_20.19.44.png?ex=66bb4158&is=66b9efd8&hm=db33d17e4ab85d18e7c82681279931cb9223de1515af25e59ab1989a9a5cf32e&)
 
 <br />
 
-# 👨‍👧‍👦 팀원 소개
+# 👥 팀원 소개
 
 <br />
 
@@ -124,15 +136,15 @@
 
 # 🛠️ 기술 스택
 
-### FRONT
+#### FE
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/AntDesign-0170FE?style=for-the-badge&logo=antdesign&logoColor=white"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
 <br />
 
-### BACK
+#### BE
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"> <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"> <img src="https://img.shields.io/badge/JSONWebTokens-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"> <img src="https://img.shields.io/badge/Passport-34E27A?style=for-the-badge&logo=passport&logoColor=white">
 <br />
 
-### INFRA
+#### INFRA
 <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white"> <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white"> <img src="https://img.shields.io/badge/AmazonS3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"> <img src="https://img.shields.io/badge/AmazonEC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"> <img src="https://img.shields.io/badge/PM2-2B037A?style=for-the-badge&logo=pm2&logoColor=white">
 
 <br />
